@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="flex border-b items-center justify-between py-[2vw] px-[2vw] mt-[1.3vw]" id="nav">
+        <a class="text-2xl font-bold" href="/">Note App</a>
+        <div class="flex gap-3">
+            <a href="/" class="text-2xl">Home</a>
+            <a href="/newnote" class="text-2xl">New Note</a>
+        </div>
+    </div>
+    <div class="flex flex-wrap">
+        <% if (files.length > 0) { %>
+            <% files.forEach(function(val) { %>
+                <div class="border shadow-lg  m-[2vw]  p-[1vw] w-[20vw]">
+                    <h2 class="font-semibold text-2xl">
+                        <%= val %>
+                    </h2>
+                    <h4 class="my-[.5vw]">
+                      17/10/24
+                    </h4>
+            <div class="flex gap-20 ">
+                
+                <a href="/show/<%= val %>" class="text-blue-600">View More</a>
+
+                <a class="ml-[2vw] text-blue-600 " href="/show/delete/<%= val %>" >delete</a>
+            </div>
+               
+                </div>  
+                <% }) %>
+                    <% } else { %>
+                        <h3 class="m-[2vw] text-black-100">No Notes yet....</h3>
+                      <% } %>
+    </div>
+</body>
+</html>
