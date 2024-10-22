@@ -19,20 +19,18 @@
     <div class="flex flex-wrap">
         <% if (files.length > 0) { %>
             <% files.forEach(function(val) { %>
-                <div class="border shadow-lg  m-[2vw]  p-[1vw] w-[20vw]">
+                <div class="border shadow-lg  break-words  m-[2vw]  p-[1vw] w-[20vw]">
                     <h2 class="font-semibold text-2xl">
                         <%= val %>
                     </h2>
                     <h4 class="my-[.5vw]">
                       17/10/24
                     </h4>
-            <div class="flex gap-20 ">
-                
+            <div class="flex  items-center justify-between px-[.1vw] ">
                 <a href="/show/<%= val %>" class="text-blue-600">View More</a>
-
-                <a class="ml-[2vw] text-blue-600 " href="/show/delete/<%= val %>" >delete</a>
+                <a class="ml-[2vw] text-blue-600" href="delete/<%= val %>" >delete</a>
+                <a class="ml-[2vw] text-blue-600" href="edit/<%= val %>" >Edit</a>
             </div>
-               
                 </div>  
                 <% }) %>
                     <% } else { %>
